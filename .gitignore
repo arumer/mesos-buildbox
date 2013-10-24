@@ -1,0 +1,4 @@
+.kitchen
+.ruby-version
+.rbenv-gemsets
+Gemfile.lock
