@@ -32,7 +32,7 @@ suites:
       run_list:
             - recipe[java::oracle]
             - recipe[mesos-buildbox]
-            - recipe[mesos-buildbox::packages]
+            - recipe[mesos-buildbox::package]
             #- recipe[minitest-handler::default]
       attributes:
         java:
