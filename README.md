@@ -1,18 +1,32 @@
 mesos-buildbox
 ==============
 
-Help create a build box for Mesos.# Description
+Helps create a box to build Mesos.
+
+# Description
+
+Installs the required packages to build Mesos. If running on a EL it will enable the EPEL YUM Repository.
 
 # Requirements
 
 Red Hat Enterprise Linux 5, and 6 distributions within this platform
 family.
 
+Depends on the following recipes:
+
+* yum
+* java
+
+
 # Attributes
 
 # Recipes
 
+* mesos-buildbox::packages - Installs required packages to build Mesos.
+
 ## Default
+
+Just add the following to your run list `recipe[mesos-buildbox::packages]`.
 
 ### Example
 
