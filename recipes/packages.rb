@@ -40,6 +40,14 @@ log "Installng RPM 'Development Tools' packages..."
     redhat-rpm-config
     rpm-build
     byacc
+    python-devel
+    libcurl-devel 
+    zlib-devel 
+    openssl-devel
+    cyrus-sasl-devel
+    cyrus-sasl
+    cyrus-sasl-md5
+    cyrus-sasl-plain
 }.each do |p|
     package p
 end
