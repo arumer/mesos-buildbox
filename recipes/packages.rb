@@ -18,8 +18,7 @@
 
 
 # Enable YUM Repositories..
-include_recipe "yum"
-include_recipe "yum::epel"
+include_recipe "yum-epel"
 
 log "Installng RPM 'Development Tools' packages..."
 %w{
