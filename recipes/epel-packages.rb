@@ -1,7 +1,7 @@
 #
 # Author:: Bernardo Gomez Palacio (<bernardo.gomezpalacio@guavus.com>)
 # Cookbook Name:: mesos-buildbox
-# Attributes:: default
+# Recipe:: packages
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,15 +16,26 @@
 # limitations under the License.
 #
 
-default[:mesos_box][:el][:base_packages] = %w{
-  mock rpmdevtools autoconf automake binutils bison flex gcc gcc-c++ gettext
-  libtool make patch pkgconfig redhat-rpm-config rpm-build byacc python-devel libcurl-devel zlib-devel
-  openssl-devel cyrus-sasl-devel cyrus-sasl cyrus-sasl-md5 cyrus-sasl-plain
-}
+# TODO: This can be generalized
+# Enable YUM Repositories..
+include_recipe "yum-epel"
 
-default[:mesos_box][:el][:additional_packages] = %w{ }
+log "Installng base packages..."
+node[:mesos_box][:el][:base_packages].each do |p|
+  package p
+end
 
+if node[:mesos_box][:el][:additional_packages].any? then
+  log "Installng additional packages..."
+  node[:mesos_box][:el][:additional_packages].each do |p|
+    package p
+  end
+end
 
-default[:mesos_box][:el][:support_packages] = %w{
-  strace gperftools gflags-devel vim atop man
-}
+log "Installing supporting packages..."
+
+node[:mesos_box][:el][:support_packages].each do |p|
+  package p
+end
+
+log "Done adding the packages supporting a the Mesos Build."

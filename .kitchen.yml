@@ -17,10 +17,11 @@ platforms:
 #      box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_debian-6.0.7_provisionerless.box
 #    run_list:
 #      - recipe[apt::default]
-    - name: centos-6.4
+    - name: centos-6.5
       driver_config:
-          box: opscode-centos-6.4
-          box_url: https://opscode-vm-bento.s3.amazonaws.com/vagrant/opscode_centos-6.4_provisionerless.box
+          box: opscode-centos-6.5
+          box_url: http://opscode-vm-bento.s3.amazonaws.com/vagrant/virtualbox/opscode_centos-6.5_chef-provisionerless.box
+
 #  - name: centos-5.9
 #  - name: fedora-18
 #    driver_config:
@@ -32,7 +33,6 @@ suites:
       run_list:
             - recipe[java::oracle]
             - recipe[mesos-buildbox]
-            - recipe[mesos-buildbox::package]
             #- recipe[minitest-handler::default]
       attributes:
         java:
@@ -65,4 +65,4 @@ suites:
 #        oracle:
 #          accept_oracle_download_terms: true
 #        install_flavor: oracle
-  
+

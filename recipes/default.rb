@@ -15,3 +15,23 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+
+
+include_recipe 'java'
+
+include_recipe 'maven'
+
+case node['platform_family']
+when "rhel", "fedora"
+  include_recipe 'mesos-buildbox::epel-packages'
+#when "freebsd"
+#when "arch"
+#when "debian"
+#when "smartos"
+  #
+else
+  log "Platform #{node[:platform_family]} is not yet supported!" do
+    level :warn
+  end
+end
+
