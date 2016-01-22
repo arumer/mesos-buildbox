@@ -20,6 +20,8 @@ default[:mesos_box][:el][:base_packages] = %w{
   mock rpmdevtools autoconf automake binutils bison flex gcc gcc-c++ gettext
   libtool make patch pkgconfig redhat-rpm-config rpm-build byacc python-devel libcurl-devel zlib-devel
   openssl-devel cyrus-sasl-devel cyrus-sasl cyrus-sasl-md5 cyrus-sasl-plain
+  http-parser-devel gmock-devel gtest-devel libev-devel leveldb-devel protobuf-devel
+  python-boto python-setuptools
 }
 
 default[:mesos_box][:el][:additional_packages] = %w{ }
