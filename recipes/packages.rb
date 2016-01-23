@@ -38,4 +38,16 @@ node[:mesos_box][:el][:support_packages].each do |p|
   package p
 end
 
+log "Installing scilinux packages..."
+
+node[:mesos_box][:el][:scilinux_packages].each do |p|
+  package p
+end
+
+log "Installing subversion packages..."
+
+node[:mesos_box][:el][:subversion_packages].each do |p|
+  package p
+end
+
 log "Done adding the packages supporting a the Mesos Build."

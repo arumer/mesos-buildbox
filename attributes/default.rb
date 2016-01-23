@@ -21,7 +21,7 @@ default[:mesos_box][:el][:base_packages] = %w{
   libtool make patch pkgconfig redhat-rpm-config rpm-build byacc python-devel libcurl-devel zlib-devel
   openssl-devel cyrus-sasl-devel cyrus-sasl cyrus-sasl-md5 cyrus-sasl-plain
   http-parser-devel gmock-devel gtest-devel libev-devel leveldb-devel protobuf-devel
-  python-boto python-setuptools
+  python-boto python-setuptools apr-devel apr-util-devel
 }
 
 default[:mesos_box][:el][:additional_packages] = %w{ }
@@ -30,3 +30,26 @@ default[:mesos_box][:el][:additional_packages] = %w{ }
 default[:mesos_box][:el][:support_packages] = %w{
   strace gperftools gflags-devel vim atop man
 }
+
+default[:mesos_box][:el][:scilinux_packages] = %w{
+  devtoolset-2-toolchain
+}
+default[:mesos_box][:el][:subversion_packages] = %w{
+  subversion-devel
+}
+
+default[:mesos_box][:scilinux_repo][:repo_name] = 'slc6-devtoolset'
+default[:mesos_box][:scilinux_repo][:name] = 'Scientific Linux CERN 6 (SLC6) - Devtoolset addons'
+default[:mesos_box][:scilinux_repo][:baseurl] = 'http://linuxsoft.cern.ch/cern/devtoolset/slc6X/$basearch/yum/devtoolset/'
+default[:mesos_box][:scilinux_repo][:gpgkey] = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-cern'
+default[:mesos_box][:scilinux_repo][:gpgcheck] = 0
+default[:mesos_box][:scilinux_repo][:enabled] = 1
+default[:mesos_box][:scilinux_repo][:protect] = 1
+
+default[:mesos_box][:subversion_repo][:repo_name] = 'wandisco-svn'
+default[:mesos_box][:subversion_repo][:name] = 'WANdisco SVN Repo 1.8'
+default[:mesos_box][:subversion_repo][:baseurl] = 'http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/$basearch/'
+default[:mesos_box][:subversion_repo][:gpgkey] = 'gpgkey=http://opensource.wandisco.com/RPM-GPG-KEY-WANdisco'
+default[:mesos_box][:subversion_repo][:gpgcheck] = 1
+default[:mesos_box][:subversion_repo][:enabled] = 1
+default[:mesos_box][:subversion_repo][:protect] = 1
