@@ -28,7 +28,6 @@ yum_repository 'scilinux' do
     gpgkey node[:mesos_box][:scilinux_repo][:gpgkey]
     gpgcheck node[:mesos_box][:scilinux_repo][:gpgcheck]
     enabled node[:mesos_box][:scilinux_repo][:enabled]
-    protect node[:mesos_box][:scilinux_repo][:protected]
     action :create
 end
 
@@ -38,7 +37,6 @@ yum_repository 'wandisco-svn' do
     gpgkey node[:mesos_box][:subversion_repo][:gpgkey]
     gpgcheck node[:mesos_box][:subversion_repo][:gpgcheck]
     enabled node[:mesos_box][:subversion_repo][:enabled]
-    protect node[:mesos_box][:subversion_repo][:protect]
     action :create
 end
     
