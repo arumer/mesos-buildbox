@@ -24,7 +24,7 @@ log "Installng repositories..."
 
 yum_repository 'scilinux' do
     description node[:mesos_box][:scilinux_repo][:name]
-    baseurl node[:mesos_box][:scilinux_repo][:base_url]
+    baseurl node[:mesos_box][:scilinux_repo][:baseurl]
     gpgkey node[:mesos_box][:scilinux_repo][:gpgkey]
     gpgcheck node[:mesos_box][:scilinux_repo][:gpgcheck]
     enabled node[:mesos_box][:scilinux_repo][:enabled]
