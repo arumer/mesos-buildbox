@@ -48,6 +48,6 @@ default[:mesos_box][:scilinux_repo][:enabled] = true
 default[:mesos_box][:subversion_repo][:repo_name] = 'wandisco-svn'
 default[:mesos_box][:subversion_repo][:name] = 'WANdisco SVN Repo 1.8'
 default[:mesos_box][:subversion_repo][:baseurl] = 'http://opensource.wandisco.com/centos/6/svn-1.8/RPMS/$basearch/'
-default[:mesos_box][:subversion_repo][:gpgkey] = 'gpgkey=http://opensource.wandisco.com/RPM-GPG-KEY-WANdisco'
+default[:mesos_box][:subversion_repo][:gpgkey] = 'http://opensource.wandisco.com/RPM-GPG-KEY-WANdisco'
 default[:mesos_box][:subversion_repo][:gpgcheck] = false
 default[:mesos_box][:subversion_repo][:enabled] = true
